@@ -1,0 +1,27 @@
+{
+  "extends": "tslint:recommended",
+  "rules": {
+    "no-trailing-whitespace": [false],
+    "no-empty": false,
+    "no-consecutive-blank-lines": false,
+    "typedef-whitespace": [false],
+    "whitespace": [false],
+    "curly": true,
+    "prefer-const": false,
+    "arrow-parens": false,
+    "max-classes-per-file": false,
+    "one-line": [false],
+    "no-console": [false],
+    "only-arrow-functions": false,
+    "object-literal-shorthand": false,
+    "eofline": false,
+    "trailing-comma": false,
+    "variable-name": [false],
+    "member-ordering": false,
+    "no-namespace": [false],
+    "no-var-keyword": false,
+    "array-type": false,
+    "align": [false],
+    "no-shadowed-variable": false
+  }
+}

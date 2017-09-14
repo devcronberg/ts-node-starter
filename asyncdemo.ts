@@ -1,0 +1,173 @@
+// how to use
+
+// import * as asyncdemo from "./asyncdemo";
+
+// asyncdemo.getRandomColor().then(v => {
+//   console.log("Color of the day is " + v);
+// });
+
+// (async function showColor() {
+//   const c: string = await asyncdemo.getRandomColor();
+//   console.log("Color of the day is " + c);
+// })();
+
+function getRandomInt(min: number, max: number) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+export function getRandomColor(): Promise<string> {
+  // simulate ajax...
+  const ms = getRandomInt(1000, 4000);
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(colors[getRandomInt(0, colors.length)].data);
+    }, ms);
+  });
+}
+
+// from https://listsdesign.herokuapp.com/lists/colors-en
+const colors = [
+  { data: "SandyBrown" },
+  { data: "GhostWhite" },
+  { data: "LightSalmon" },
+  { data: "Bisque" },
+  { data: "LightSlateGray" },
+  { data: "PaleTurquoise" },
+  { data: "MediumVioletRed" },
+  { data: "LightSteelBlue" },
+  { data: "MidnightBlue" },
+  { data: "Peru" },
+  { data: "CornflowerBlue" },
+  { data: "DimGray" },
+  { data: "LightPink" },
+  { data: "Lime" },
+  { data: "Cornsilk" },
+  { data: "Cyan" },
+  { data: "DeepPink" },
+  { data: "BurlyWood" },
+  { data: "LightBlue" },
+  { data: "Fuchsia" },
+  { data: "LightGoldenRodYellow" },
+  { data: "PaleGoldenRod" },
+  { data: "DarkSalmon" },
+  { data: "Darkorange" },
+  { data: "Orange" },
+  { data: "FloralWhite" },
+  { data: "Ivory" },
+  { data: "Pink" },
+  { data: "Teal" },
+  { data: "Tan" },
+  { data: "LightCoral" },
+  { data: "ForestGreen" },
+  { data: "LimeGreen" },
+  { data: "Chocolate" },
+  { data: "Linen" },
+  { data: "RosyBrown" },
+  { data: "DarkTurquoise" },
+  { data: "DarkOrchid" },
+  { data: "DarkBlue" },
+  { data: "Magenta" },
+  { data: "SeaGreen" },
+  { data: "DarkRed" },
+  { data: "DarkSlateGray" },
+  { data: "SaddleBrown" },
+  { data: "DarkMagenta" },
+  { data: "Gray" },
+  { data: "Azure" },
+  { data: "Black" },
+  { data: "DarkKhaki" },
+  { data: "Lavender" },
+  { data: "Maroon" },
+  { data: "Orchid" },
+  { data: "DarkSeaGreen" },
+  { data: "Gainsboro" },
+  { data: "Brown" },
+  { data: "Khaki" },
+  { data: "MediumSeaGreen" },
+  { data: "LightYellow" },
+  { data: "Salmon" },
+  { data: "MediumTurquoise" },
+  { data: "IndianRed" },
+  { data: "AntiqueWhite" },
+  { data: "SpringGreen" },
+  { data: "MistyRose" },
+  { data: "DarkOliveGreen" },
+  { data: "Thistle" },
+  { data: "Violet" },
+  { data: "Olive" },
+  { data: "Crimson" },
+  { data: "BlanchedAlmond" },
+  { data: "PowderBlue" },
+  { data: "SlateGray" },
+  { data: "LawnGreen" },
+  { data: "MintCream" },
+  { data: "LightGreen" },
+  { data: "LightSkyBlue" },
+  { data: "Yellow" },
+  { data: "Indigo" },
+  { data: "HotPink" },
+  { data: "WhiteSmoke" },
+  { data: "Gold" },
+  { data: "BlueViolet" },
+  { data: "LavenderBlush" },
+  { data: "OliveDrab" },
+  { data: "PeachPuff" },
+  { data: "OldLace" },
+  { data: "GreenYellow" },
+  { data: "Navy" },
+  { data: "Aquamarine" },
+  { data: "DarkSlateBlue" },
+  { data: "Purple" },
+  { data: "PaleGreen" },
+  { data: "SteelBlue" },
+  { data: "Blue" },
+  { data: "Coral" },
+  { data: "PaleVioletRed" },
+  { data: "RoyalBlue" },
+  { data: "Turquoise" },
+  { data: "MediumOrchid" },
+  { data: "Green" },
+  { data: "Sienna" },
+  { data: "DarkGray" },
+  { data: "DodgerBlue" },
+  { data: "SlateBlue" },
+  { data: "LightGray" },
+  { data: "DarkGoldenRod" },
+  { data: "SkyBlue" },
+  { data: "LightSeaGreen" },
+  { data: "GoldenRod" },
+  { data: "Snow" },
+  { data: "YellowGreen" },
+  { data: "CadetBlue" },
+  { data: "PapayaWhip" },
+  { data: "DeepSkyBlue" },
+  { data: "LemonChiffon" },
+  { data: "DimGrey" },
+  { data: "White" },
+  { data: "MediumSpringGreen" },
+  { data: "HoneyDew" },
+  { data: "Plum" },
+  { data: "Silver" },
+  { data: "MediumBlue" },
+  { data: "Aqua" },
+  { data: "Chartreuse" },
+  { data: "FireBrick" },
+  { data: "Beige" },
+  { data: "SeaShell" },
+  { data: "Wheat" },
+  { data: "AliceBlue" },
+  { data: "MediumPurple" },
+  { data: "OrangeRed" },
+  { data: "DarkGreen" },
+  { data: "Tomato" },
+  { data: "Moccasin" },
+  { data: "NavajoWhite" },
+  { data: "DarkCyan" },
+  { data: "MediumAquaMarine" },
+  { data: "Red" },
+  { data: "DarkViolet" },
+  { data: "LightCyan" },
+  { data: "MediumSlateBlue" }
+];
